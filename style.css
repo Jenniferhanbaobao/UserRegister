@@ -1,0 +1,70 @@
+/* 基础重置 */
+* {
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+body {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f7f9fc;
+    color: #333;
+}
+
+/* 头部 */
+header {
+    background: #4a90e2;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 8px;
+}
+header h1 { margin: 0; }
+
+/* 主体区块 */
+main section {
+    background: white;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* 表单控件 */
+input, select, textarea, button {
+    padding: 6px 10px;
+    margin: 4px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+button {
+    background: #4a90e2;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+button[type="reset"] {
+    background: #999;
+}
+button:hover { opacity: 0.85; }
+
+/* 表格 */
+table {
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+th {
+    background: #4a90e2;
+    color: white;
+}
+
+/* 列表间距 */
+ol, ul, dl { line-height: 1.8; }
+dt { font-weight: bold; color: #4a90e2; }
+
+/* 页脚 */
+footer {
+    text-align: center;
+    color: #888;
+    padding: 12px;
+}

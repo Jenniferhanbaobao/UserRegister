@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册 - 实验2</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:,">
+</head>
+<body>
+
+<!-- 1. 语义化头部 -->
+<header>
+    <h1>🌟 用户注册页面</h1>
+    <p>湖南文理学院芙蓉学院 · Web应用开发技术 实验2 —— 贺丹（24310226）</p>
+</header>
+
+<!-- 2. 主体内容 -->
+<main>
+
+    <!-- ===== 表单模块 ===== -->
+    <section>
+        <h2>📝 注册信息</h2>
+        <form id="regForm" action="#" method="post">
+
+            <!-- 用户名 -->
+            <p>
+                <label for="username">用户名：</label>
+                <input type="text" id="username" name="username" required placeholder="请输入3-10位字符">
+            </p>
+
+            <!-- 密码 -->
+            <p>
+                <label for="pwd">密码：</label>
+                <input type="password" id="pwd" name="password" required placeholder="6-16位">
+            </p>
+
+            <!-- 确认密码 -->
+            <p>
+                <label for="pwd2">确认密码：</label>
+                <input type="password" id="pwd2" name="confirmPassword" required>
+            </p>
+
+            <!-- 性别：两种 label 写法都要有 -->
+            <p>
+                <span>性别：</span>
+                <label><input type="radio" name="gender" value="male"> 男</label>
+                <label for="female"><input type="radio" name="gender" value="female" id="female"> 女</label>
+            </p>
+
+            <!-- 生日 -->
+            <p>
+                <label for="birth">出生日期：</label>
+                <input type="date" id="birth" name="birthday">
+            </p>
+
+            <!-- 邮箱 -->
+            <p>
+                <label for="mail">邮箱：</label>
+                <input type="email" id="mail" name="email" required placeholder="xxx@xxx.com">
+            </p>
+
+            <!-- 手机号：正则 [0-9]{11} -->
+            <p>
+                <label for="phone">手机号：</label>
+                <input type="tel" id="phone" name="phone" required pattern="[0-9]{11}" title="请输入11位数字手机号">
+            </p>
+
+            <!-- 兴趣爱好（多选） -->
+            <p>
+                <span>兴趣爱好：</span>
+                <label><input type="checkbox" name="hobby" value="travelling"> 旅游</label>
+                <label><input type="checkbox" name="hobby" value="photography"> 摄影</label>
+                <label><input type="checkbox" name="hobby" value="sport"> 运动</label>
+                <label><input type="checkbox" name="hobby" value="music"> 音乐</label>
+            </p>
+
+            <!-- 头像上传 -->
+            <p>
+                <label for="avatar">上传头像：</label>
+                <input type="file" id="avatar" name="avatar" accept="image/*">
+            </p>
+
+            <!-- 城市下拉 -->
+            <p>
+                <label for="city">所在城市：</label>
+                <select id="city" name="city">
+                    <option value="">--请选择--</option>
+                    <option value="changde" selected>常德</option>
+                    <option value="changsha">长沙</option>
+                    <option value="beijing">北京</option>
+                </select>
+            </p>
+
+            <!-- 个人简介 -->
+            <p>
+                <label for="bio">个人简介：</label><br>
+                <textarea id="bio" name="bio" rows="4" cols="50" placeholder="介绍一下你自己~"></textarea>
+            </p>
+
+            <!-- 按钮 -->
+            <p>
+                <button type="submit">✅ 提交注册</button>
+                <button type="reset">🔄 重置</button>
+            </p>
+        </form>
+    </section>
+
+    <!-- ===== 表格模块 ===== -->
+    <section>
+        <h2>📊 会员权益对比</h2>
+        <table border="1" cellpadding="8">
+            <thead>
+                <tr>
+                    <th>会员等级</th>
+                    <th>免费额度</th>
+                    <th>客服响应</th>
+                    <th>备注</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>普通用户</td>
+                    <td>10次/月</td>
+                    <td>48小时</td>
+                    <td rowspan="2">新注册默认普通</td>
+                </tr>
+                <tr>
+                    <td>黄金会员</td>
+                    <td>无限次</td>
+                    <td>2小时</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- ===== 列表模块：有序 + 无序 + 定义列表 ===== -->
+    <section>
+        <h2>📌 注册步骤（有序列表）</h2>
+        <ol>
+            <li>填写基本信息</li>
+            <li>验证手机号</li>
+            <li>上传头像</li>
+            <li>点击提交</li>
+        </ol>
+
+        <h2>⚠️ 注意事项（无序列表）</h2>
+        <ul>
+            <li>密码区分大小写</li>
+            <li>手机号不可重复绑定</li>
+            <li>头像仅支持 JPG/PNG</li>
+        </ul>
+
+        <h2>📖 术语解释（定义列表）</h2>
+        <dl>
+            <dt>FormData</dt>
+            <dd>用于一次性收集表单所有带 name 的控件值</dd>
+            <dt>pattern</dt>
+            <dd>HTML5 正则校验属性，本例限制11位数字手机号</dd>
+        </dl>
+    </section>
+
+</main>
+
+<!-- 3. 页脚 -->
+<footer>
+    <p>&copy; 2026 芙蓉学院 · 实验2 HTML5进阶综合训练—— 制作：贺丹（24310226）</p>
+</footer>
+
+<!-- 4. JS：用 FormData 收集数据并在控制台打印 -->
+<script>
+    document.getElementById('regForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // 阻止页面跳转
+        const fd = new FormData(this);
+        console.log('----- 表单收集到的数据 -----');
+        for (let [key, val] of fd.entries()) {
+            console.log(key + ' : ' + val);
+        }
+        alert('已阻止跳转，请按 F12 看 Console 打印的数据！');
+    });
+</script>
+
+</body>
+</html>
